@@ -1,0 +1,1 @@
+curl --get localhost:9292/run/DetermineRelativeDate?today=2025-10-30 --data-urlencode 'phrase=three weeks from yesterday'

@@ -29,7 +29,7 @@ GEM
       foobara-type-generator (< 2.0.0)
       foobara-typescript-react-command-form-generator (< 2.0.0)
       foobara-typescript-remote-command-generator (< 2.0.0)
-    foobara (0.2.5)
+    foobara (0.2.6)
       bigdecimal
       foobara-lru-cache (< 2.0.0)
       foobara-util (< 2.0.0)
@@ -54,6 +54,8 @@ GEM
       foobara-files-generator (< 2.0.0)
     foobara-files-generator (0.1.1)
       foobara (>= 0.1.1, < 2.0.0)
+    foobara-http-command-connector (1.1.1)
+      foobara (>= 0.1.1, < 2.0.0)
     foobara-local-files-crud-driver-generator (0.0.3)
       foobara
       foobara-files-generator
@@ -64,6 +66,10 @@ GEM
     foobara-organization-generator (0.0.2)
       foobara
       foobara-files-generator
+    foobara-rack-connector (0.1.0)
+      foobara (>= 0.1.1, < 2.0.0)
+      foobara-http-command-connector (>= 0.1.0, < 2.0.0)
+      rack
     foobara-rack-connector-generator (0.0.11)
       foobara
       foobara-files-generator
@@ -83,7 +89,7 @@ GEM
     foobara-rubocop-rules (1.0.6)
       rubocop
       rubocop-rspec
-    foobara-sh-cli-connector (1.1.0)
+    foobara-sh-cli-connector (1.1.2)
       foobara (>= 0.1.1, < 2.0.0)
     foobara-sh-cli-connector-generator (0.1.0)
       foobara (>= 0.1.1)
@@ -94,15 +100,16 @@ GEM
     foobara-typescript-react-command-form-generator (1.1.1)
       foobara (>= 0.1.1, < 2.0.0)
       foobara-typescript-remote-command-generator (< 2.0.0)
-    foobara-typescript-remote-command-generator (1.1.6)
+    foobara-typescript-remote-command-generator (1.2.0)
       foobara (>= 0.1.16, < 2.0.0)
       foobara-files-generator (< 2.0.0)
-    foobara-util (1.0.3)
+    foobara-util (1.0.4)
     inheritable-thread-vars (0.0.3)
-    json (2.15.2)
+    json (2.16.0)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     method_source (1.1.0)
+    nio4r (2.7.5)
     parallel (1.27.0)
     parser (3.3.10.0)
       ast (~> 2.4.1)
@@ -114,10 +121,13 @@ GEM
     pry-byebug (3.11.0)
       byebug (~> 12.0)
       pry (>= 0.13, < 0.16)
+    puma (7.1.0)
+      nio4r (~> 2.0)
     racc (1.8.1)
+    rack (3.2.4)
     rainbow (3.1.1)
     regexp_parser (2.11.3)
-    rubocop (1.81.6)
+    rubocop (1.81.7)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -128,7 +138,7 @@ GEM
       rubocop-ast (>= 1.47.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.47.1)
+    rubocop-ast (1.48.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
     rubocop-rake (0.7.1)
@@ -148,12 +158,15 @@ PLATFORMS
 
 DEPENDENCIES
   foob
-  foobara
   foobara-dotenv-loader
+  foobara-rack-connector
   foobara-remote-imports
   foobara-rubocop-rules
+  foobara-sh-cli-connector
   pry
   pry-byebug
+  puma
+  rack
   rubocop-rake
 
 BUNDLED WITH

@@ -1,10 +1,15 @@
 source "https://rubygems.org"
 
-gem "foob"
-gem "foobara" # , path: "~/gitlocal/foobara/foobara"
+# gem "foobara", path: "~/gitlocal/foobara/foobara"
 
+gem "puma"
+gem "rack"
+
+gem "foob"
 gem "foobara-dotenv-loader"
+gem "foobara-rack-connector"
 gem "foobara-remote-imports" # , path: "~/gitlocal/foobara/remote-imports"
+gem "foobara-sh-cli-connector"
 
 gem "foobara-rubocop-rules"
 gem "rubocop-rake"
