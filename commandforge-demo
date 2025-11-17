@@ -8,28 +8,28 @@ Foobara::LoadDotenv.run!(dir: __dir__)
 require "foobara/remote_imports"
 
 Foobara::RemoteImports::ImportCommand.run!(
-  manifest_url: "https://app.commandforge.com/run/GetManifestForDomain?domain=SfRuby::AngelListMeetupDemos",
+  manifest_url: "https://app.commandforge.com/run/GetManifestForDomain?domain=VanRuby::BrainStationMeetup",
   auth_header: ["x-api-key", -> { ENV.fetch("COMMANDFORGE_API_KEY") }],
-  # TODO: give better error if this is set but auth_header is missing
   manifest_requires_auth: true,
   cache: false
 )
 
-# puts SfRuby::AngelListMeetupDemos::Compute.run!(operand1: 2, operand2: 3, operator: "**")
+# puts VanRuby::BrainStationMeetup::Compute.run!(operand1: 2, operand2: 3, operator: "**")
 
 require "foobara/sh_cli_connector"
+
 connector = Foobara::CommandConnectors::ShCliConnector.new
-connector.connect(SfRuby::AngelListMeetupDemos)
+connector.connect(VanRuby::BrainStationMeetup)
 connector.run
 
-# connector.connect(SfRuby::AngelListMeetupDemos::DetermineRelativeDate,
+# connector.connect(VanRuby::BrainStationMeetup::DetermineRelativeDate,
 #                   inputs: { set: { today: -> { Date.today } } })
 # connector.run
 
 # llm_model = "qwen3-coder:30b"
 # llm_model = "claude-3-7-sonnet-20250219"
 # sentence = "The author of this script wantts to show you these commands"
-# analyzed_sentence = SfRuby::AngelListMeetupDemos::AnalyzeSentence.run!(llm_model:, sentence:)
+# analyzed_sentence = VanRuby::BrainStationMeetup::AnalyzeSentence.run!(llm_model:, sentence:)
 #
 # puts "The original sentence was:"
 # puts analyzed_sentence.original_sentence
@@ -43,5 +43,5 @@ connector.run
 #
 # require "foobara/rack_connector"
 # connector = Foobara::CommandConnectors::Http::Rack.new
-# connector.connect(SfRuby::AngelListMeetupDemos)
+# connector.connect(VanRuby::BrainStationMeetup)
 # connector.run_puma

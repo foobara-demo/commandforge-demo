@@ -15,8 +15,8 @@ Foobara::RemoteImports::ImportCommand.run!(
 )
 
 Foobara::Commandforge::CreateType.run!(
-  organization_name: "SfRuby",
-  domain_name: "AngelListMeetupDemos",
+  organization_name: "VanRuby",
+  domain_name: "BrainStationMeetup",
   type_name: :language,
   type_declaration: <<~HERE
     ---
@@ -28,15 +28,15 @@ Foobara::Commandforge::CreateType.run!(
 )
 
 Foobara::Commandforge::CreateType.run!(
-  organization_name: "SfRuby",
-  domain_name: "AngelListMeetupDemos",
+  organization_name: "VanRuby",
+  domain_name: "BrainStationMeetup",
   type_name: :AnalyzedNoun,
   type_declaration: <<~HERE
     ---
     :type: :model
     :name: AnalyzedNoun
-    :model_module: SfRuby::AngelListMeetupDemos
-    :model_class: SfRuby::AngelListMeetupDemos::AnalyzedNoun
+    :model_module: VanRuby::BrainStationMeetup
+    :model_class: VanRuby::BrainStationMeetup::AnalyzedNoun
     :model_base_class: Foobara::Model
     :attributes_declaration:
       :type: :attributes
@@ -46,7 +46,7 @@ Foobara::Commandforge::CreateType.run!(
           :type: :string
         :language:
           :description: the language of the noun
-          :type: :SfRuby::AngelListMeetupDemos::language
+          :type: :VanRuby::BrainStationMeetup::language
         :uninflected:
           :description: the uninflected form of the noun
           :type: :string
@@ -57,15 +57,15 @@ Foobara::Commandforge::CreateType.run!(
   HERE
 )
 Foobara::Commandforge::CreateType.run!(
-  organization_name: "SfRuby",
-  domain_name: "AngelListMeetupDemos",
+  organization_name: "VanRuby",
+  domain_name: "BrainStationMeetup",
   type_name: :AnalyzedVerb,
   type_declaration: <<~HERE
     ---
     :type: :model
     :name: AnalyzedVerb
-    :model_module: SfRuby::AngelListMeetupDemos
-    :model_class: SfRuby::AngelListMeetupDemos::AnalyzedVerb
+    :model_module: VanRuby::BrainStationMeetup
+    :model_class: VanRuby::BrainStationMeetup::AnalyzedVerb
     :model_base_class: Foobara::Model
     :attributes_declaration:
       :type: :attributes
@@ -75,7 +75,7 @@ Foobara::Commandforge::CreateType.run!(
           :type: :string
         :language:
           :description: the language of the verb
-          :type: :SfRuby::AngelListMeetupDemos::language
+          :type: :VanRuby::BrainStationMeetup::language
         :uninflected:
           :description: the uninflected form of the verb
           :type: :string
@@ -99,21 +99,21 @@ Foobara::Commandforge::CreateType.run!(
 )
 
 Foobara::Commandforge::CreateType.run!(
-  organization_name: "SfRuby",
-  domain_name: "AngelListMeetupDemos",
+  organization_name: "VanRuby",
+  domain_name: "BrainStationMeetup",
   type_name: :AnalyzedSentence,
   type_declaration: <<~HERE
     ---
     :type: :model
     :name: AnalyzedSentence
-    :model_module: SfRuby::AngelListMeetupDemos
-    :model_class: SfRuby::AngelListMeetupDemos::AnalyzedSentence
+    :model_module: VanRuby::BrainStationMeetup
+    :model_class: VanRuby::BrainStationMeetup::AnalyzedSentence
     :model_base_class: Foobara::Model
     :attributes_declaration:
       :type: :attributes
       :element_type_declarations:
         :original_sentence: :string
-        :language: :SfRuby::AngelListMeetupDemos::language
+        :language: :VanRuby::BrainStationMeetup::language
         :corrected_sentence:
           :allow_nil: true
           :description: If the sentence has spelling errors, this will be a corrected
@@ -121,10 +121,10 @@ Foobara::Commandforge::CreateType.run!(
           :type: :string
         :verbs:
           :type: :array
-          :element_type_declaration: :SfRuby::AngelListMeetupDemos::AnalyzedVerb
+          :element_type_declaration: :VanRuby::BrainStationMeetup::AnalyzedVerb
         :nouns:
           :type: :array
-          :element_type_declaration: :SfRuby::AngelListMeetupDemos::AnalyzedNoun
+          :element_type_declaration: :VanRuby::BrainStationMeetup::AnalyzedNoun
       :required:
       - :language
       - :nouns
